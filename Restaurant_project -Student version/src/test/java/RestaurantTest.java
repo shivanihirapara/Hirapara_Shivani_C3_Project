@@ -5,6 +5,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
@@ -81,4 +82,20 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void getting_total_amount_of_selected_menu_item(){
+
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+
+        ArrayList<String> SelectedItem = new ArrayList<String>();
+
+        SelectedItem.add("Sweet corn soup");
+        SelectedItem.add("Vegetable lasagne");
+
+        double totalCost= restaurant.getTotalCost(SelectedItem);
+    }
 }
+
