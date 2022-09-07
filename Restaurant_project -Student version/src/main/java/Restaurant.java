@@ -70,5 +70,18 @@ public class Restaurant {
     public String getName() {
         return name;
     }
+    public double getTotalCost(ArrayList<String> selectedItem) {
+        double totalcost = 0.0;
+        for (Object item : menu) {
+
+            if (selectedItem.contains(item.getName())) {
+                totalcost = totalcost + item.price;
+            }
+            }
+
+            return totalcost ;
+
+    }
 
 }
+

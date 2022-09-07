@@ -96,6 +96,7 @@ class RestaurantTest {
         SelectedItem.add("Vegetable lasagne");
 
         double totalCost= restaurant.getTotalCost(SelectedItem);
+         assertEquals(388,totalCost);
     }
 }
 
